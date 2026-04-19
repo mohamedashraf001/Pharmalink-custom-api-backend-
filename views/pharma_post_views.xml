@@ -1,0 +1,50 @@
+<odoo>
+
+    <!-- LIST VIEW -->
+    <record id="view_pharma_post_list" model="ir.ui.view">
+        <field name="name">pharma.post.list</field>
+        <field name="model">pharma.post</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="medicine_name"/>
+                <field name="quantity"/>
+                <field name="price"/>
+                <field name="status"/>
+                <field name="pharmacy_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_pharma_post_form" model="ir.ui.view">
+        <field name="name">pharma.post.form</field>
+        <field name="model">pharma.post</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="medicine_name"/>
+                        <field name="quantity"/>
+                        <field name="price"/>
+                        <field name="status"/>
+                        <field name="pharmacy_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ACTION -->
+    <record id="action_pharma_post" model="ir.actions.act_window">
+        <field name="name">Pharma Posts</field>
+        <field name="res_model">pharma.post</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- MENU -->
+    <menuitem id="menu_pharma_root" name="Pharma"/>
+    <menuitem id="menu_pharma_posts" name="Posts"
+              parent="menu_pharma_root"
+              action="action_pharma_post"/>
+
+</odoo>
