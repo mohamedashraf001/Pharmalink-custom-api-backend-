@@ -24,7 +24,7 @@ class AuthAPI(http.Controller):
                 'message': 'Email and password are required'
             }
 
-        # 🔥 IMPORTANT: correct Odoo auth method
+
         from odoo.service import common
 
         try:
